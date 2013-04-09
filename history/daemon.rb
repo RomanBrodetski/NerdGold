@@ -17,17 +17,18 @@ def alarm
 end
 # alarm
 # lo = gets.to_f
-Range = (0.023..0.026)
+b_Range = (6550..7000)
+l_Range = (0.02..0.03)
 loop do
 	begin
 	puts "stats: ltc_btc #{a = current_rate "ltc_btc"}, btc_rub #{b = current_rate "btc_rur"}"
 	puts savings
 	5.times {puts}
-	alarm unless Range.include? a
+	alarm unless b_Range.include? b && l_Range.include? a
 	sleep 10
 rescue Exception => e
 	puts e
-		30.times {Sound.beep(700, 15)}
+		# 30.times {Sound.beep(700, 15)}
 end
 end
 # end
